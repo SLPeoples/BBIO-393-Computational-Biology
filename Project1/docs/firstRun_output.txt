@@ -1,0 +1,70 @@
+/usr/bin/python2.7 /home/qiime/Desktop/Project1/firstRun/biom_read.py
+/home/qiime/Desktop/Project1/firstRun/study_77_011618-113533 found.
+/home/qiime/Desktop/Project1/firstRun/figures created.
+/home/qiime/Desktop/Project1/firstRun/stats created.
+Rarefaction in progress. Calling:
+	single_rarefaction.py 
+		-i /home/qiime/Desktop/Project1/firstRun/study_77_011618-113533/processed_data/219_otu_table.biom 
+		-o /home/qiime/Desktop/Project1/firstRun/study_77_011618-113533/processed_data/219_otu_table_even1000.biom 
+		-d 1000
+Rarefaction check completed.
+Dissimilarity Matrix preparation in progress. Calling:
+	beta_diversity.py 
+		-i /home/qiime/Desktop/Project1/firstRun/study_77_011618-113533/processed_data/219_otu_table_even1000.biom 
+		-o /home/qiime/Desktop/Project1/firstRun/stats 
+		-m weighted_unifrac 
+		-t /home/qiime/Desktop/Project1/firstRun/study_77_011618-113533/97_otus.tree
+
+Lean-vs-Lean:
+ Low: 0.09436299
+ Mean: 0.3501875217533606
+ Std: 0.12033391562884786
+ High: 0.78030682
+ Count: 3422
+
+Obese-vs-Obese:
+ Low: 0.08747150000000002
+ Mean: 0.3766034260836065
+ Std: 0.12658099158464228
+ High: 0.91778851
+ Count: 34782
+
+Lean-vs-Obese:
+ Low: 0.11719817
+ Mean: 0.36671111489803315
+ Std: 0.1230288230092367
+ High: 0.8923403599999999
+ Count: 11033
+
+Unifrac distances saved to: 
+	 Lean-vs-Lean: 
+		/home/qiime/Desktop/Project1/firstRun/stats/LL_stats_Unifrac.csv
+	 Obese-vs-Obese: 
+		/home/qiime/Desktop/Project1/firstRun/stats/OO_stats_Unifrac.csv
+	 Lean-vs-Obese: 
+		/home/qiime/Desktop/Project1/firstRun/stats/LO_stats_Unifrac.csv
+Boxplot saved to:
+	 /home/qiime/Desktop/Project1/firstRun/figures/boxplot_unifrac.png
+Distributions saved to: 
+	 Lean-vs-Lean: 
+		 /home/qiime/Desktop/Project1/firstRun/figures/LL_Distribution_Unifrac.png
+	 Obese-vs-Obese: 
+		 /home/qiime/Desktop/Project1/firstRun/figures/OO_Distribution_Unifrac.png
+	 Lean-vs-Obese: 
+		 /home/qiime/Desktop/Project1/firstRun/figures/LO_Distribution_Unifrac.png
+PCoA in progress. Calling:
+	principal_coordinates.py 
+		-i /home/qiime/Desktop/Project1/firstRun/stats/weighted_unifrac_219_otu_table_even1000.txt 
+		-o /home/qiime/Desktop/Project1/firstRun/stats/weighted_unifrac_219_otu_table_even1000_pcoa.txt
+/usr/local/lib/python2.7/dist-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.229622495618 and the largest is 10.2807894039.
+  RuntimeWarning
+Principal coordinates saved to: 
+	/home/qiime/Desktop/Project1/firstRun/stats/weighted_unifrac_219_otu_table_even1000_pcoa.txt
+Emperor visualization in progress. Calling:
+	make_emperor.py 
+		-i /home/qiime/Desktop/Project1/firstRun/stats/weighted_unifrac_219_otu_table_even1000_pcoa.txt 
+		-m /home/qiime/Desktop/Project1/firstRun/study_77_011618-113533/mapping_files/2485_mapping_file.txt 
+		 -b obesitycat
+		 -o /home/qiime/Desktop/Project1/firstRun/figures
+Emperor index.html saved to: 
+	/home/qiime/Desktop/Project1/firstRun/figures/index.html

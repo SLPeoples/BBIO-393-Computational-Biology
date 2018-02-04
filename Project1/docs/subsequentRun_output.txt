@@ -1,0 +1,47 @@
+/usr/bin/python2.7 /home/qiime/Desktop/Project1/biom_read.py
+/home/qiime/Desktop/Project1/study_77_011618-113533 found.
+/home/qiime/Desktop/Project1/figures found.
+/home/qiime/Desktop/Project1/stats found.
+Rarefaction check completed.
+
+Lean-vs-Lean:
+ Low: 0.09970718
+ Mean: 0.34773411670368204
+ Std: 0.12065306174990073
+ High: 0.7940865500000001
+ Count: 3422
+
+Obese-vs-Obese:
+ Low: 0.0721046
+ Mean: 0.37414471930193777
+ Std: 0.12564177289788758
+ High: 0.90631165
+ Count: 34782
+
+Lean-vs-Obese:
+ Low: 0.12453261999999997
+ Mean: 0.3645712817076045
+ Std: 0.12259447284488963
+ High: 0.8884746099999999
+ Count: 11033
+
+Unifrac distances saved to: 
+	 Lean-vs-Lean: 
+		/home/qiime/Desktop/Project1/stats/LL_stats_Unifrac.csv
+	 Obese-vs-Obese: 
+		/home/qiime/Desktop/Project1/stats/OO_stats_Unifrac.csv
+	 Lean-vs-Obese: 
+		/home/qiime/Desktop/Project1/stats/LO_stats_Unifrac.csv
+Boxplot saved to:
+	 /home/qiime/Desktop/Project1/figures/boxplot_unifrac.png
+Distributions saved to: 
+	 Lean-vs-Lean: 
+		 /home/qiime/Desktop/Project1/figures/LL_Distribution_Unifrac.png
+	 Obese-vs-Obese: 
+		 /home/qiime/Desktop/Project1/figures/OO_Distribution_Unifrac.png
+	 Lean-vs-Obese: 
+		 /home/qiime/Desktop/Project1/figures/LO_Distribution_Unifrac.png
+Principal coordinates saved to: 
+	/home/qiime/Desktop/Project1/stats/weighted_unifrac_219_otu_table_even1000_pcoa.txt
+Principal coordinates saved to: 
+	/home/qiime/Desktop/Project1/figures/index.html
