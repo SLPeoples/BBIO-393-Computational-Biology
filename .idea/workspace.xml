@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d165406-baac-40b6-a2d0-891aae741fb8" name="Default" comment="" />
+    <list default="true" id="2d165406-baac-40b6-a2d0-891aae741fb8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Project1/Project1.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project1/docs/BetaDiversityHumanGutMicrobiomeLvO.docx" afterPath="$PROJECT_DIR$/Project1/docs/BetaDiversityHumanGutMicrobiomeLvO.docx" />
+      <change beforePath="$PROJECT_DIR$/Project1/docs/BetaDiversityHumanGutMicrobiomeLvO.pdf" afterPath="$PROJECT_DIR$/Project1/docs/BetaDiversityHumanGutMicrobiomeLvO.pdf" />
+      <change beforePath="$PROJECT_DIR$/SKLearnPresentation/SKLearn.docx" afterPath="$PROJECT_DIR$/SKLearnPresentation/SKLearn.docx" />
+      <change beforePath="$PROJECT_DIR$/SKLearnPresentation/SKLearn.pdf" afterPath="$PROJECT_DIR$/SKLearnPresentation/SKLearn.pdf" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,18 +30,8 @@
       <file leaf-file-name="tables_exercises.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Week2/tables_exercises.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
+            <state relative-caret-position="986">
               <caret line="58" column="75" lean-forward="false" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="biom_read.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project1/biom_read.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="239" column="10" lean-forward="false" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -44,18 +40,28 @@
       <file leaf-file-name="problemset_1_peoples.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProblemSet1/problemset_1_peoples.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="746">
-              <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="10" />
+            <state relative-caret-position="1887">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="needleman_wunsch_global_alignment.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="needleman_wunsch_global_alignment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Week5/needleman_wunsch_global_alignment.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ete_sim.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Week5/ete_sim.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,6 +113,7 @@
         <option value="$PROJECT_DIR$/Week3/visualizations.py" />
         <option value="$PROJECT_DIR$/Week4/template_script.py" />
         <option value="$PROJECT_DIR$/Week5/needleman_wunsch_global_alignment.py" />
+        <option value="$PROJECT_DIR$/Week5/ete_sim.py" />
       </list>
     </option>
   </component>
@@ -133,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -161,11 +169,15 @@
               <item name="BBIO-393-Computational-Biology" type="462c0819:PsiDirectoryNode" />
               <item name="Week4" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BBIO-393-Computational-Biology" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBIO-393-Computational-Biology" type="462c0819:PsiDirectoryNode" />
+              <item name="Week5" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,20 +200,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.needleman_wunsch_global_alignment">
-    <configuration name="biom_read" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.ete_sim">
+    <configuration name="ete_sim" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Week5" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BBIO-393-Computational-Biology" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project1/biom_read.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Week5/ete_sim.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,19 +292,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.biom_read" />
-      <item index="1" class="java.lang.String" itemvalue="Python.problemset_1_peoples" />
-      <item index="2" class="java.lang.String" itemvalue="Python.visualizations" />
-      <item index="3" class="java.lang.String" itemvalue="Python.template_script" />
-      <item index="4" class="java.lang.String" itemvalue="Python.needleman_wunsch_global_alignment" />
+      <item index="0" class="java.lang.String" itemvalue="Python.problemset_1_peoples" />
+      <item index="1" class="java.lang.String" itemvalue="Python.visualizations" />
+      <item index="2" class="java.lang.String" itemvalue="Python.template_script" />
+      <item index="3" class="java.lang.String" itemvalue="Python.needleman_wunsch_global_alignment" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ete_sim" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.needleman_wunsch_global_alignment" />
-        <item index="1" class="java.lang.String" itemvalue="Python.template_script" />
-        <item index="2" class="java.lang.String" itemvalue="Python.visualizations" />
-        <item index="3" class="java.lang.String" itemvalue="Python.problemset_1_peoples" />
-        <item index="4" class="java.lang.String" itemvalue="Python.biom_read" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ete_sim" />
+        <item index="1" class="java.lang.String" itemvalue="Python.needleman_wunsch_global_alignment" />
+        <item index="2" class="java.lang.String" itemvalue="Python.template_script" />
+        <item index="3" class="java.lang.String" itemvalue="Python.visualizations" />
+        <item index="4" class="java.lang.String" itemvalue="Python.problemset_1_peoples" />
       </list>
     </recent_temporary>
   </component>
@@ -321,7 +333,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3559322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3559322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -343,6 +355,66 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Week2/hello_world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Week2/tables_exercises.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="75" lean-forward="false" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project1/biom_read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3910">
+          <caret line="239" column="10" lean-forward="false" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ProblemSet1/problemset_1_peoples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Week3/visualizations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2975">
+          <caret line="181" column="23" lean-forward="false" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Week4/template_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Week5/needleman_wunsch_global_alignment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Week2/hello_world.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -527,7 +599,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project1/biom_read.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="3910">
           <caret line="239" column="10" lean-forward="false" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="10" />
           <folding />
         </state>
@@ -555,7 +627,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Week2/tables_exercises.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
+        <state relative-caret-position="986">
           <caret line="58" column="75" lean-forward="false" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
           <folding />
         </state>
@@ -563,8 +635,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ProblemSet1/problemset_1_peoples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="10" />
+        <state relative-caret-position="1887">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -573,6 +645,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Week5/ete_sim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
