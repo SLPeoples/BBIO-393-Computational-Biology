@@ -29,9 +29,3 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
-
-# Accuracy
-correct = 109+60
-incorrect = 3+3
-accuracy = correct / (correct + incorrect)
-print(str(accuracy*100) + "% accuracy.")
