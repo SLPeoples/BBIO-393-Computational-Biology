@@ -1,4 +1,4 @@
-C:\Users\Ripti\Dropbox\Peoples\CSS143\BBIO-393-Computational-Biology\Project2>python network_analysis.py --help
+\...>python network_analysis.py --help
 usage: network_analysis.py [-h] -node NODE_FILE -edge EDGE_FILE -f FEATURE -c
                            CATEGORIES CATEGORIES [-o OUTPUT_FILE]
                            [-n N_ITERATIONS] [-v] [--version]
@@ -69,18 +69,18 @@ optional arguments:
                 -i 'sample_1000_filtered.biom' -m mapping_file_filtered.txt -o otu_network_filtered  -b "obesitycat"
 
 
-C:\Users\Ripti\Dropbox\Peoples\CSS143\BBIO-393-Computational-Biology\Project2>python network_analysis.py -node "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt" -edge "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt" -o "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results" -f "obesitycat" -c "Lean" "Obese"
+\...>python network_analysis.py -node "\.../data/filtered_data/otu_network_filtered/real_node_table.txt" -edge "\.../data/filtered_data/otu_network_filtered/real_edge_table.txt" -o "\.../data/results" -f "obesitycat" -c "Lean" "Obese"
 network_analysis.py
-         Node file: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt
-         Edge file: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt
-         Output filepath: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results
+         Node file: \.../data/filtered_data/otu_network_filtered/real_node_table.txt
+         Edge file: \.../data/filtered_data/otu_network_filtered/real_edge_table.txt
+         Output filepath: \.../data/results
          Feature:  obesitycat
          Categories:  ['Lean', 'Obese']
          n_iterations:  1000
-Parsing C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt
+Parsing \.../data/filtered_data/otu_network_filtered/real_node_table.txt
          Feature: obesitycat
          Categories: Lean, Obese
-Parsing C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt
+Parsing \.../data/filtered_data/otu_network_filtered/real_edge_table.txt
          Feature: obesitycat
          Categories: Lean, Obese
 
@@ -152,4 +152,4 @@ ObeseOnly :
          Min: 1.013      1Q: 2.679       Mean: 8.144     Median: 5.335   3Q: 9.901       Max: 42.044     Std: 8.884
 Both Lean and Obese:
          Min: 5.916      1Q: 26.026      Mean: 58.523    Median: 48.97   3Q: 81.029      Max: 177.548    Std: 42.405
-Output saved to: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results/obesitycat_network_analysis.txt
+Output saved to: \.../data/results/obesitycat_network_analysis.txt
