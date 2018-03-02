@@ -1,0 +1,10 @@
+Lean:
+	 Min: 204.535	 1Q: 248.442	 Mean: 272.095	 Median: 272.014	 3Q: 295.983	 Max: 351.157	 Std: 35.877
+Obese:
+	 Min: 160.35	 1Q: 246.558	 Mean: 275.872	 Median: 280.719	 3Q: 308.324	 Max: 364.507	 Std: 47.018
+LeanOnly :
+	 Min: 1.0	 1Q: 1.872	 Mean: 5.29	 Median: 3.308	 3Q: 6.506	 Max: 23.59	 Std: 5.384
+ObeseOnly :
+	 Min: 1.013	 1Q: 2.679	 Mean: 8.144	 Median: 5.335	 3Q: 9.901	 Max: 42.044	 Std: 8.884
+Both Lean and Obese:
+	 Min: 5.916	 1Q: 26.026	 Mean: 58.523	 Median: 48.97	 3Q: 81.029	 Max: 177.548	 Std: 42.405

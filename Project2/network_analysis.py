@@ -132,7 +132,7 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     :return: DataFrame containing from, to, degree, and feature for each category respectively and both categories.
     """
     if verbose:
-        print("Parsing "+str(edge_file)+"\n\t Feature: "+feature+"\n\t Categories: "+categories[0]+", "+categories[1])
+        print("Parsing "+str(edge_file)+"\n\t Feature: "+feature+"\n\t Categories: "+categories[0]+", "+categories[1]+"\n")
     # Read the node file
     node_column_list = ["node_name", "degree", feature]
     df_node = pd.read_csv(node_file, sep="\t")
@@ -144,43 +144,36 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     df_edge = pd.read_csv(edge_file, sep="\t")
     df_edge = df_edge[edge_column_list]
 
-    # Lists for Union DataFrame
-    u_from = []
-    u_to = []
-    u_deg = []
-    u_feat = []
-
     # List of otu node identifiers for comparison
     to_list = []
     cat_0_list = []
     cat_1_list = []
 
-    for edge_row in df_edge.iterrows():
-        for node_row in df_node.iterrows():
-            # Check and add identifiers to the to_list
-            if str(edge_row[1][1]) in to_list:
-                pass
-            else:
-                to_list.append(str(edge_row[1][1]))
-            # Check and add identifiers to each category's list
-            if str(edge_row[1][1]) == str(node_row[1][0]):
-                if str(edge_row[1][2]) == categories[0]:
-                    cat_0_list.append(str(edge_row[1][2]))
-                if str(edge_row[1][2]) == categories[1]:
-                    cat_1_list.append(str(edge_row[1][2]))
-                # Append the Lists
-                u_from.append(edge_row[1][0])
-                u_to.append(node_row[1][0])
-                u_deg.append(node_row[1][1])
-                u_feat.append(edge_row[1][2])
-    # Build the Union DataFrame
-    union_list = {"from": u_from, "to": u_to, "degree": u_deg, feature: u_feat}
-    df_union = pd.DataFrame(data=union_list)
-    if verbose:
-        print("Unioned DataFrame: ")
-        print(df_union.head(n=10))
-        print("\t ...")
+    df_edge.rename(columns={'to': 'to'}, inplace=True)
+    df_edge = df_edge.sort_values(by=['to'])
+    df_edge['to'] = df_edge['to'].convert_objects(convert_numeric=True) # Doesn't work with to_numeric
+    df_node.rename(columns = {'node_name':'to'},inplace=True)
+    df_node = df_node.sort_values(by=['to'])
+    df_node['to'] = df_node['to'].convert_objects(convert_numeric=True) # Doesn't work with to_numeric
 
+    df_union = df_edge.merge(df_node,how='inner', on='to')
+    df_union = df_union.drop([str(feature)+"_y"],axis=1)
+    df_union.rename(columns = {(feature+'_x'):str(feature)},inplace=True)
+
+    if verbose:
+        print("\nUnioned DataFrame: ")
+        print(df_union.head())
+        print("\t ...")
+    for row in df_union.iterrows():
+        if row[1][2]  == categories[0]:
+            cat_0_list.append(row[1][1])
+        elif row[1][2]  == categories[1]:
+            cat_1_list.append(row[1][1])
+    for item in cat_0_list:
+        if item in cat_1_list:
+            to_list.append(item)
+            cat_0_list.remove(item)
+            cat_1_list.remove(item)
     # Lists for the first category's DataFrame
     from_0=[]
     to_0=[]
@@ -202,32 +195,36 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     for row in df_union.iterrows():
         if row[1][1] in cat_0_list:
             if row[1][1] in cat_1_list:
-                from_b.append(row[1][0])
-                to_b.append(row[1][1])
-                deg_b.append(row[1][2])
-                feat_b.append(row[1][3])
+                from_b.append(row[1]['from'])
+                to_b.append(row[1]['to'])
+                deg_b.append(row[1][feature])
+                feat_b.append(row[1]['degree'])
             else:
-                from_0.append(row[1][0])
-                to_0.append(row[1][1])
-                deg_0.append(row[1][2])
-                feat_0.append(row[1][3])
+                from_0.append(row[1]['from'])
+                to_0.append(row[1]['to'])
+                deg_0.append(row[1][feature])
+                feat_0.append(row[1]['degree'])
         else:
-            from_1.append(row[1][0])
-            to_1.append(row[1][1])
-            deg_1.append(row[1][2])
-            feat_1.append(row[1][3])
+            from_1.append(row[1]['from'])
+            to_1.append(row[1]['to'])
+            deg_1.append(row[1][feature])
+            feat_1.append(row[1]['degree'])
 
     # Create the first category's DataFrame
-    cat_0_final = {"from":from_0,"to":to_0,"degree":deg_0,feature:feat_0}
+    cat_0_final = {"from":from_0,"to":to_0,feature:feat_0,"degree":deg_0}
     otu_0_table = pd.DataFrame(data=cat_0_final)
+    otu_0_table.rename(columns = {feature:'degree', 'degree':feature},inplace=True)
+
 
     # Create the second category's DataFrame
-    cat_1_final = {"from":from_1, "to":to_1, "degree":deg_1, feature:feat_1}
+    cat_1_final = {"from":from_1, "to":to_1, feature:feat_1,"degree":deg_1}
     otu_1_table = pd.DataFrame(data=cat_1_final)
+    otu_1_table.rename(columns={feature: 'degree', 'degree': feature}, inplace=True)
 
     # Create the DataFrame for otus which appear in both categories
-    cat_both_final = {"from":from_b, "to":to_b, "degree":deg_b, feature:feat_b}
+    cat_both_final = {"from":from_b, "to":to_b, feature:feat_b,"degree":deg_b}
     otu_both_table = pd.DataFrame(data=cat_both_final)
+    otu_both_table.rename(columns={feature: 'degree', 'degree': feature}, inplace=True)
 
     if verbose:
         print(categories[0]+" Only:")
@@ -236,7 +233,7 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
         print(categories[1] + " Only:")
         print(otu_1_table.head(n=10))
         print("\t\t\t ...")
-        print("Both "+categories[0] + categories[1]+":")
+        print("Both "+categories[0] + " and " +categories[1]+":")
         print(otu_both_table.head(n=10))
         print("\t\t\t\t ...")
     return otu_0_table, otu_1_table, otu_both_table
@@ -259,12 +256,12 @@ def parse_stats(feature, categories, cat_0_table, cat_1_table, otu_0_table, otu_
     :param verbose: verbosity
     """
     if verbose:
-        print("Processing statistics for "+categories[0]+", for "+str(n_iterations)+" iterations, with samples of 40.")
+        print("Processing statistics for "+categories[0]+" nodes, for "+str(n_iterations)+" iterations, with samples of 40.")
     # Parse the stats for the first category
     stats_0 = individual_stats(cat_0_table, n_iterations)
 
     if verbose:
-        print("Processing statistics for "+categories[1]+", for "+str(n_iterations)+" iterations, with samples of 40.")
+        print("Processing statistics for "+categories[1]+" nodes, for "+str(n_iterations)+" iterations, with samples of 40.")
     # Parse the stats for the second category
     stats_1 = individual_stats(cat_1_table, n_iterations)
 
@@ -287,13 +284,12 @@ def parse_stats(feature, categories, cat_0_table, cat_1_table, otu_0_table, otu_
     stats_otu_b = individual_stats(otu_both_table, n_iterations)
 
     # Save the stats to the output file location
-    with open(output_file+"/"+str(feature)+"_network_analysis.txt",'rb') as outfile:
-        writer = csv.writer(outfile, delimiter = ',')
-        writer.writerow(categories[0] + ":\n" + stats_0)
-        writer.writerow(categories[1] + ":\n" + stats_1)
-        writer.writerow(categories[0] + "Only :\n" + stats_otu_0)
-        writer.writerow(categories[1] + "Only :\n" + stats_otu_1)
-        writer.writerow("Both " + categories[0] + " and " + categories[1] + ":\n" + stats_otu_b)
+    outfile = open(output_file+"/"+str(feature)+"_network_analysis.txt",'w')
+    outfile.write(categories[0] + ":\n" + stats_0+"\n")
+    outfile.write(categories[1] + ":\n" + stats_1+"\n")
+    outfile.write(categories[0] + "Only :\n" + stats_otu_0+"\n")
+    outfile.write(categories[1] + "Only :\n" + stats_otu_1+"\n")
+    outfile.write("Both " + categories[0] + " and " + categories[1] + ":\n" + stats_otu_b+"\n")
     outfile.close()
 
     #Print the stats
@@ -327,7 +323,7 @@ def individual_stats(table, n_iterations):
     orig = table
     for i in range(n_iterations):
         # Take a sample
-        table = orig.sample(n=40)
+        table = orig.sample(n=40,replace=True)
         # Append the lists
         minimum.append(table.degree.min())
         q1.append(table.degree.quantile(.25))
