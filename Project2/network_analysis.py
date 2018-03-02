@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from __future__ import division
 import pandas as pd
-import csv
 
 __author__ = "Samuel L. Peoples"
 __credits__ = ["Dr. Jesse Zaneveld"]
@@ -17,9 +16,14 @@ def make_commandline_interface():
     """Returns a parser for the commandline"""
     short_description = \
         """
-        This script will analyze statistics between two categories of a feature column in a node table.
-        Returns output text file with statistics for the degree of each category, and otus associated with the 
-        respective categories, as well as both. Accuracy of the statistics can be controlled with n_iterations.
+        network_analysis.py; analyze statistics of degree comparing between two categories of feature column.
+        Example: \t network_analysis.py  \n\t\t
+            -node {PATH to NODE FILE} \n\t\t
+            -edge {PATH to EDGE FILE} \n\t\t
+            [-o {PATH to OUTPUT DIRECTORY}] \n\t\t
+            -f {FEATURE COLUMN for comparison} \n\t\t
+            -c {CATEEGORY of FEATURE} {CATEGORY of FEATURE}\n\t\t
+            [-n {N_ITERATIONS for Monte Carlo Simulation}]
         """
 
     long_description = \

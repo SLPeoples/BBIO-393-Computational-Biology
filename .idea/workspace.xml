@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d165406-baac-40b6-a2d0-891aae741fb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Project2/data/results" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Project2/docs/~$oposal.docx" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Project2/network_analysis.py" afterPath="$PROJECT_DIR$/Project2/network_analysis.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +38,8 @@
       <file leaf-file-name="network_analysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Project2/network_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="395">
+              <caret line="380" column="18" lean-forward="true" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="110" />
               <folding>
                 <element signature="e#22#53#0" expanded="true" />
               </folding>
@@ -459,8 +457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project2/network_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="395">
+          <caret line="380" column="18" lean-forward="true" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="110" />
           <folding>
             <element signature="e#22#53#0" expanded="true" />
           </folding>
