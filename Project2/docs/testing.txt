@@ -1,0 +1,10 @@
+    # For testing
+    """
+    node_file = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt"
+    edge_file = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt"
+    output_file = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results"
+    feature = "obesitycat"
+    categories = ["Lean", "Obese"]
+    n_iterations = 1000
+    verbose = True
+    """

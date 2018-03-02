@@ -374,16 +374,7 @@ def main():
         print("\t Feature: ", feature)
         print("\t Categories: ", categories)
         print("\t n_iterations: ", n_iterations)
-    # For testing
-    """
-    node_file = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt"
-    edge_file = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt"
-    output_file = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results"
-    feature = "obesitycat"
-    categories = ["Lean", "Obese"]
-    n_iterations = 1000
-    verbose = True
-    """
+
     cat_0_table, cat_1_table = parse_node_table(node_file, feature, categories, verbose)
     otu_0_table, otu_1_table, otu_both_table = parse_otu_node_table(node_file, edge_file, feature, categories, verbose)
 
