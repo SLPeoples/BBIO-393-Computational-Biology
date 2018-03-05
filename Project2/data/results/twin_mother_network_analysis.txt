@@ -1,0 +1,10 @@
+Twin:
+	 Min: 186.982	 1Q: 253.203	 Mean: 278.762	 Median: 279.841	 3Q: 304.496	 Max: 364.167	 Std: 40.699
+Mom:
+	 Min: 146.072	 1Q: 228.273	 Mean: 266.08	 Median: 273.497	 3Q: 308.473	 Max: 346.556	 Std: 51.292
+TwinOnly :
+	 Min: 1.0	 1Q: 1.561	 Mean: 3.669	 Median: 2.647	 3Q: 4.713	 Max: 13.654	 Std: 3.043
+MomOnly :
+	 Min: 1.0	 1Q: 1.0	 Mean: 1.789	 Median: 1.486	 3Q: 2.088	 Max: 5.317	 Std: 1.063
+Both Twin and Mom:
+	 Min: 4.148	 1Q: 22.689	 Mean: 55.837	 Median: 46.013	 3Q: 78.648	 Max: 176.405	 Std: 42.73

@@ -148,11 +148,7 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     df_edge = pd.read_csv(edge_file, sep="\t")
     df_edge = df_edge[edge_column_list]
 
-    # List of otu node identifiers for comparison
-    to_list = []
-    cat_0_list = []
-    cat_1_list = []
-
+    # Wrangling to join the degree, from, to and feature columns
     df_edge.rename(columns={'to': 'to'}, inplace=True)
     df_edge = df_edge.sort_values(by=['to'])
     df_edge['to'] = df_edge['to'].convert_objects(convert_numeric=True) # Doesn't work with to_numeric
@@ -160,23 +156,29 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     df_node = df_node.sort_values(by=['to'])
     df_node['to'] = df_node['to'].convert_objects(convert_numeric=True) # Doesn't work with to_numeric
 
+    # Join the tables
     df_union = df_edge.merge(df_node,how='inner', on='to')
     df_union = df_union.drop([str(feature)+"_y"],axis=1)
     df_union.rename(columns = {(feature+'_x'):str(feature)},inplace=True)
 
     if verbose:
         print("\nUnioned DataFrame: ")
-        print(df_union.head())
+        print(df_union.head(n=10))
         print("\t ...")
 
-    # Create obese and lean lists
+    # List of otu node identifiers for comparison
+    to_list = []
+    cat_0_list = []
+    cat_1_list = []
+
+    # Create feature lists
     for row in df_union.iterrows():
         if row[1][2]  == categories[0]:
             cat_0_list.append(row[1][1])
         elif row[1][2]  == categories[1]:
             cat_1_list.append(row[1][1])
 
-    # Strip the lists
+    # Strip the lists into cat_0 only, cat_1 only, and both
     set_b = set(cat_0_list)&set(cat_1_list)
     for cat_0 in cat_0_list:
         if cat_0 in set_b:
@@ -206,6 +208,7 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     deg_b=[]
     feat_b=[]
 
+    # Populate separated DataFrames
     for row in df_union.iterrows():
         if row[1][1] in to_list:
             from_b.append(row[1]['from'])
@@ -227,7 +230,6 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     cat_0_final = {"from":from_0,"to":to_0,feature:feat_0,"degree":deg_0}
     otu_0_table = pd.DataFrame(data=cat_0_final)
     otu_0_table.rename(columns = {feature:'degree', 'degree':feature},inplace=True)
-
 
     # Create the second category's DataFrame
     cat_1_final = {"from":from_1, "to":to_1, feature:feat_1,"degree":deg_1}
@@ -268,33 +270,28 @@ def parse_stats(feature, categories, cat_0_table, cat_1_table, otu_0_table, otu_
         ex: C:/.../data/output/feature_network_analysis.txt
     :param verbose: verbosity
     """
-    if verbose:
-        print("Processing statistics for "+categories[0]+" nodes, for "+str(n_iterations)+" iterations, with samples of 40.")
+    v_string = "Processing statistics for "+categories[0]+" nodes, for "+str(n_iterations)+" iterations, with samples of 40."
     # Parse the stats for the first category
-    stats_0 = individual_stats(cat_0_table, n_iterations)
+    stats_0 = individual_stats(cat_0_table, n_iterations, verbose, v_string)
 
-    if verbose:
-        print("Processing statistics for "+categories[1]+" nodes, for "+str(n_iterations)+" iterations, with samples of 40.")
+    v_string = "Processing statistics for "+categories[1]+" nodes, for "+str(n_iterations)+" iterations, with samples of 40."
     # Parse the stats for the second category
-    stats_1 = individual_stats(cat_1_table, n_iterations)
+    stats_1 = individual_stats(cat_1_table, n_iterations, verbose, v_string)
 
-    if verbose:
-        print("Processing statistics for otu nodes connected to " + categories[0] + " only, for " + str(
-            n_iterations) + " iterations, with samples of 40.")
+    v_string = "Processing statistics for otu nodes connected to " + categories[0] + " only, for " + str(
+        n_iterations) + " iterations, with samples of 40."
     # Parse the stats for the otus associated with the first category only
-    stats_otu_0 = individual_stats(otu_0_table, n_iterations)
+    stats_otu_0 = individual_stats(otu_0_table, n_iterations, verbose, v_string)
 
-    if verbose:
-        print("Processing statistics for otu nodes connected to " + categories[1] + " only, for " + str(
-            n_iterations) + " iterations, with samples of 40.")
+    v_string = "Processing statistics for otu nodes connected to " + categories[1] + " only, for " + str(
+            n_iterations) + " iterations, with samples of 40."
     # Parse the stats for the otus associated with the second category only
-    stats_otu_1 = individual_stats(otu_1_table, n_iterations)
+    stats_otu_1 = individual_stats(otu_1_table, n_iterations, verbose, v_string)
 
-    if verbose:
-        print("Processing statistics for otu nodes connected to both " + categories[0] + " and " + categories[
-            1] + ", for " + str(n_iterations) + " iterations, with samples of 40.")
+    v_string = "Processing statistics for otu nodes connected to both " + categories[0] + " and " + categories[
+            1] + ", for " + str(n_iterations) + " iterations, with samples of 40."
     # Parse the stats for the otus associated with both categories
-    stats_otu_b = individual_stats(otu_both_table, n_iterations)
+    stats_otu_b = individual_stats(otu_both_table, n_iterations, verbose, v_string)
 
     # Save the stats to the output file location
     outfile = open(output_file+"/"+str(feature)+"_network_analysis.txt",'w')
@@ -316,13 +313,16 @@ def parse_stats(feature, categories, cat_0_table, cat_1_table, otu_0_table, otu_
         print("Output saved to: "+output_file+"/"+str(feature)+"_network_analysis.txt")
 
 
-def individual_stats(table, n_iterations):
+def individual_stats(table, n_iterations, verbose, v_string):
     """
     Individual stats for each table passed in
     :param table: DataFrame with column labeled 'degree'
     :param n_iterations: number of iterations for the test
     :return: string containing statistics; Min, Q1, Mean, Median, Q3, Max, Std_Dev
     """
+    if verbose:
+        print(v_string)
+
     # Define lists for the stats
     minimum = []
     q1 = []

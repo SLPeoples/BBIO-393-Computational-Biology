@@ -1,0 +1,10 @@
+EA:
+	 Min: 158.345	 1Q: 251.417	 Mean: 274.454	 Median: 278.775	 3Q: 304.029	 Max: 353.728	 Std: 44.122
+AA:
+	 Min: 183.431	 1Q: 244.123	 Mean: 275.218	 Median: 277.584	 3Q: 306.605	 Max: 364.591	 Std: 44.215
+EAOnly :
+	 Min: 1.0	 1Q: 1.251	 Mean: 3.004	 Median: 2.062	 3Q: 3.596	 Max: 12.862	 Std: 2.654
+AAOnly :
+	 Min: 1.0	 1Q: 1.23	 Mean: 3.158	 Median: 2.353	 3Q: 4.239	 Max: 10.545	 Std: 2.424
+Both EA and AA:
+	 Min: 4.095	 1Q: 22.279	 Mean: 55.308	 Median: 45.386	 3Q: 77.612	 Max: 176.853	 Std: 42.817
