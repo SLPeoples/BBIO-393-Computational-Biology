@@ -1,10 +1,10 @@
 EA:
-	 Min: 158.345	 1Q: 251.417	 Mean: 274.454	 Median: 278.775	 3Q: 304.029	 Max: 353.728	 Std: 44.122
+	 Min: 159.616	 1Q: 251.521	 Mean: 274.622	 Median: 278.974	 3Q: 304.498	 Max: 353.156	 Std: 44.344
 AA:
-	 Min: 183.431	 1Q: 244.123	 Mean: 275.218	 Median: 277.584	 3Q: 306.605	 Max: 364.591	 Std: 44.215
+	 Min: 182.038	 1Q: 244.057	 Mean: 274.937	 Median: 277.423	 3Q: 306.495	 Max: 364.095	 Std: 44.347
 EAOnly :
-	 Min: 1.0	 1Q: 1.251	 Mean: 3.004	 Median: 2.062	 3Q: 3.596	 Max: 12.862	 Std: 2.654
+	 Min: 1.0	 1Q: 1.239	 Mean: 3.039	 Median: 2.067	 3Q: 3.635	 Max: 13.016	 Std: 2.698
 AAOnly :
-	 Min: 1.0	 1Q: 1.23	 Mean: 3.158	 Median: 2.353	 3Q: 4.239	 Max: 10.545	 Std: 2.424
+	 Min: 1.0	 1Q: 1.219	 Mean: 3.149	 Median: 2.332	 3Q: 4.236	 Max: 10.548	 Std: 2.426
 Both EA and AA:
-	 Min: 4.095	 1Q: 22.279	 Mean: 55.308	 Median: 45.386	 3Q: 77.612	 Max: 176.853	 Std: 42.817
+	 Min: 4.219	 1Q: 22.488	 Mean: 55.128	 Median: 45.159	 3Q: 77.363	 Max: 176.873	 Std: 42.531
