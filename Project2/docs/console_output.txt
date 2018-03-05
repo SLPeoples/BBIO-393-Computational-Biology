@@ -109,43 +109,43 @@ Unioned DataFrame:
 4     77.TS66  13986      Obese       3
          ...
 Lean Only:
-  obesitycat        from  degree     to
-0       Lean  77.TS185.2       1  16477
-1      Obese   77.TS94.2       4  17311
-2       Lean    77.TS2.2       4  17311
-3       Lean  77.TS193.2       4  17311
-4       Lean      77.TS1       4  17311
-5       Lean    77.TS4.2       1  24162
-6       Lean  77.TS155.2       1  32546
-7       Lean  77.TS165.2       1  34789
-8       Lean   77.TS13.2       4  49088
-9       Lean  77.TS129.2       4  49088
+  obesitycat        from  degree      to
+0       Lean  77.TS185.2       1   16477
+1       Lean    77.TS4.2       1   24162
+2       Lean  77.TS155.2       1   32546
+3       Lean  77.TS165.2       1   34789
+4       Lean     77.TS13       1   70632
+5       Lean    77.TS129       1  109587
+6       Lean  77.TS109.2       1  110059
+7       Lean     77.TS25       2  113278
+8       Lean    77.TS1.2       2  113278
+9       Lean      77.TS2       1  113827
                  ...
 Obese Only:
   obesitycat        from  degree     to
 0      Obese    77.TS134       2  12727
 1      Obese  77.TS126.2       2  12727
-2      Obese     77.TS19       3  13986
-3       Lean    77.TS127       3  13986
-4      Obese     77.TS66       3  13986
-5      Obese  77.TS119.2       2  24546
-6      Obese   77.TS39.2       2  24546
-7      Obese  77.TS118.2       3  25534
-8      Obese    77.TS9.2       3  25534
-9      Obese     77.TS37       3  25534
+2      Obese  77.TS119.2       2  24546
+3      Obese   77.TS39.2       2  24546
+4      Obese  77.TS118.2       3  25534
+5      Obese    77.TS9.2       3  25534
+6      Obese     77.TS37       3  25534
+7      Obese    77.TS190       1  28218
+8      Obese    77.TS156       1  29566
+9      Obese  77.TS169.2       1  33112
                          ...
 Both Lean and Obese:
   obesitycat        from  degree     to
-0       Lean    77.TS2.2      43  15728
-1      Obese  77.TS134.2      43  15728
-2      Obese   77.TS27.2      43  15728
-3      Obese   77.TS39.2      43  15728
-4       Lean    77.TS124      43  15728
-5      Obese     77.TS37      43  15728
-6       Lean    77.TS165      43  15728
-7      Obese    77.TS183      43  15728
-8      Obese     77.TS96      43  15728
-9      Obese  77.TS117.2      43  15728
+0      Obese     77.TS19       3  13986
+1       Lean    77.TS127       3  13986
+2      Obese     77.TS66       3  13986
+3       Lean    77.TS2.2      43  15728
+4      Obese  77.TS134.2      43  15728
+5      Obese   77.TS27.2      43  15728
+6      Obese   77.TS39.2      43  15728
+7       Lean    77.TS124      43  15728
+8      Obese     77.TS37      43  15728
+9       Lean    77.TS165      43  15728
                                  ...
 Processing statistics for Lean nodes, for 1000 iterations, with samples of 40.
 Processing statistics for Obese nodes, for 1000 iterations, with samples of 40.
@@ -154,13 +154,13 @@ Processing statistics for otu nodes connected to Obese only, for 1000 iterations
 Processing statistics for otu nodes connected to both Lean and Obese, for 1000 iterations, with samples of 40.
 Statistics:
 Lean:
-         Min: 206.339    1Q: 248.679     Mean: 272.052   Median: 271.919         3Q: 295.74      Max: 344.307    Std: 35.234
+         Min: 206.316    1Q: 248.666     Mean: 272.001   Median: 272.238         3Q: 295.564     Max: 344.462    Std: 35.342
 Obese:
-         Min: 163.633    1Q: 246.499     Mean: 275.544   Median: 280.429         3Q: 307.792     Max: 362.744    Std: 46.67
+         Min: 164.337    1Q: 246.873     Mean: 276.028   Median: 280.724         3Q: 308.285     Max: 363.016    Std: 46.651
 LeanOnly :
-         Min: 1.001      1Q: 1.913       Mean: 5.274     Median: 3.339   3Q: 6.575       Max: 23.446     Std: 5.314
+         Min: 1.0        1Q: 1.007       Mean: 1.895     Median: 1.78    3Q: 2.102       Max: 6.047  Std: 1.157
 ObeseOnly :
-         Min: 1.008      1Q: 2.63        Mean: 8.05      Median: 5.315   3Q: 9.817       Max: 41.669     Std: 8.779
+         Min: 1.0        1Q: 2.07        Mean: 7.196     Median: 4.111   3Q: 8.374       Max: 42.639     Std: 9.044
 Both Lean and Obese:
-         Min: 6.034      1Q: 26.23       Mean: 58.513    Median: 48.734  3Q: 80.565      Max: 179.225    Std: 42.561
+         Min: 4.584      1Q: 23.512      Mean: 56.117    Median: 46.313  3Q: 78.342      Max: 177.502    Std: 42.55
 Output saved to: ~./data/results/obesitycat_network_analysis.txt

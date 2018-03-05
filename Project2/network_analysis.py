@@ -168,16 +168,26 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
         print("\nUnioned DataFrame: ")
         print(df_union.head())
         print("\t ...")
+
+    # Create obese and lean lists
     for row in df_union.iterrows():
         if row[1][2]  == categories[0]:
             cat_0_list.append(row[1][1])
         elif row[1][2]  == categories[1]:
             cat_1_list.append(row[1][1])
-    for item in cat_0_list:
-        if item in cat_1_list:
-            to_list.append(item)
-            cat_0_list.remove(item)
-            cat_1_list.remove(item)
+
+    # Strip the lists
+    set_b = set(cat_0_list)&set(cat_1_list)
+    for cat_0 in cat_0_list:
+        if cat_0 in set_b:
+            to_list.append(cat_0)
+            cat_0_list.remove(cat_0)
+    for cat_1 in cat_1_list:
+        if cat_1 in set_b:
+            if cat_1 not in to_list:
+                to_list.append(cat_1)
+            cat_1_list.remove(cat_1)
+
     # Lists for the first category's DataFrame
     from_0=[]
     to_0=[]
@@ -197,18 +207,17 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     feat_b=[]
 
     for row in df_union.iterrows():
-        if row[1][1] in cat_0_list:
-            if row[1][1] in cat_1_list:
-                from_b.append(row[1]['from'])
-                to_b.append(row[1]['to'])
-                deg_b.append(row[1][feature])
-                feat_b.append(row[1]['degree'])
-            else:
-                from_0.append(row[1]['from'])
-                to_0.append(row[1]['to'])
-                deg_0.append(row[1][feature])
-                feat_0.append(row[1]['degree'])
-        else:
+        if row[1][1] in to_list:
+            from_b.append(row[1]['from'])
+            to_b.append(row[1]['to'])
+            deg_b.append(row[1][feature])
+            feat_b.append(row[1]['degree'])
+        elif row[1][1] in cat_0_list:
+            from_0.append(row[1]['from'])
+            to_0.append(row[1]['to'])
+            deg_0.append(row[1][feature])
+            feat_0.append(row[1]['degree'])
+        elif row[1][1] in cat_1_list:
             from_1.append(row[1]['from'])
             to_1.append(row[1]['to'])
             deg_1.append(row[1][feature])
