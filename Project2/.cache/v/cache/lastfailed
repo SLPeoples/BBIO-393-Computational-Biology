@@ -1,0 +1,18 @@
+{
+  "test_network_analysis.py": true,
+  "test_network_analysis.py::NetworkAnalysisTests::test_parse_otu_node_table_bad_categories": true,
+  "test_network_analysis.py::test_individual_stats_correct": true,
+  "test_network_analysis.py::test_parse_node_tabe_bad_categories": true,
+  "test_network_analysis.py::test_parse_node_table_bad_feature": true,
+  "test_network_analysis.py::test_parse_node_table_bad_headers": true,
+  "test_network_analysis.py::test_parse_node_table_bad_path": true,
+  "test_network_analysis.py::test_parse_node_table_correct": true,
+  "test_network_analysis.py::test_parse_otu_node_table_bad_categories": true,
+  "test_network_analysis.py::test_parse_otu_node_table_bad_feature": true,
+  "test_network_analysis.py::test_parse_otu_node_table_bad_headers": true,
+  "test_network_analysis.py::test_parse_otu_node_table_bad_path": true,
+  "test_network_analysis.py::test_parse_otu_node_table_correct": true,
+  "test_network_analysis.py::test_parse_stats_correct": true,
+  "test_network_analysis.py::test_split_categories_bad_match": true,
+  "test_network_analysis.py::test_split_categories_correct": true
+}

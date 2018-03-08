@@ -5,7 +5,6 @@ import pandas as pd
 __author__ = "Samuel L. Peoples"
 __credits__ = ["Dr. Jesse Zaneveld"]
 __version__ = "0.0.1"
-__maintainer__ = __author__
 __email__ = "contact@lukepeoples.com"
 __status__ = "Development"
 
@@ -109,7 +108,7 @@ def parse_node_table(node_file, feature, categories, verbose):
     :return: DataFrame for each category containing node_disp_name, degree, and feature
     """
     if verbose:
-        print("Parsing "+str(node_file)+"\n\t Feature: "+feature+"\n\t Categories: "+categories[0]+", "+categories[1])
+        print("Parsing "+str(node_file))
     # Column headers
     column_list = ["node_disp_name", "degree", feature]
     # Read the node file
@@ -124,7 +123,8 @@ def parse_node_table(node_file, feature, categories, verbose):
     # Return the tables
     return cat_0_table, cat_1_table
 
-def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
+
+def parse_otu_node_table(node_file, edge_file, feature,verbose):
     """
     Parses the otu nodes by joining the data in the edge file with the node file. Returns DataFrame for OTUs in each
     category respectively, and both categories.
@@ -136,7 +136,7 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
     :return: DataFrame containing from, to, degree, and feature for each category respectively and both categories.
     """
     if verbose:
-        print("Parsing "+str(edge_file)+"\n\t Feature: "+feature+"\n\t Categories: "+categories[0]+", "+categories[1]+"\n")
+        print("Parsing "+str(edge_file))
     # Read the node file
     node_column_list = ["node_name", "degree", feature]
     df_node = pd.read_csv(node_file, sep="\t")
@@ -165,7 +165,18 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
         print("\nUnioned DataFrame: ")
         print(df_union.head(n=10))
         print("\t ...")
+    return df_union
 
+
+def split_categories(df_union, categories, feature, verbose):
+    """
+    Splits the unioned DF into three DFs with unique OTU nodes; cat_0 only, cat_1, only, cat_both
+    :param df_union: Joined dataframe
+    :param categories: categories of feature
+    :param feature: Feature column for testing
+    :param verbose: verbostiy
+    :return: cat_0_table, cat_1_table, cat_both_table
+    """
     # List of otu node identifiers for comparison
     to_list = []
     cat_0_list = []
@@ -173,82 +184,95 @@ def parse_otu_node_table(node_file, edge_file, feature, categories,verbose):
 
     # Create feature lists
     for row in df_union.iterrows():
-        if row[1][2]  == categories[0]:
+        if row[1][2] == categories[0]:
             cat_0_list.append(row[1][1])
-        elif row[1][2]  == categories[1]:
+        elif row[1][2] == categories[1]:
             cat_1_list.append(row[1][1])
 
     # Strip the lists into cat_0 only, cat_1 only, and both
-    set_b = set(cat_0_list)&set(cat_1_list)
+    set_b = set(cat_0_list) & set(cat_1_list)
     for cat_0 in cat_0_list:
         if cat_0 in set_b:
             to_list.append(cat_0)
-            cat_0_list.remove(cat_0)
     for cat_1 in cat_1_list:
         if cat_1 in set_b:
             if cat_1 not in to_list:
                 to_list.append(cat_1)
-            cat_1_list.remove(cat_1)
+    for item in to_list:
+        if item in cat_0_list:
+            cat_0_list.remove(item)
+        elif item in cat_1_list:
+            cat_1_list.remove(item)
 
     # Lists for the first category's DataFrame
-    from_0=[]
-    to_0=[]
-    deg_0=[]
-    feat_0=[]
-    from_1=[]
+    from_0 = []
+    to_0 = []
+    deg_0 = []
+    feat_0 = []
+    from_1 = []
 
     # Lists for the second category's DataFrame
-    to_1=[]
-    deg_1=[]
-    feat_1=[]
+    to_1 = []
+    deg_1 = []
+    feat_1 = []
 
     # Lists for the otus which appear in both categories
-    from_b=[]
-    to_b=[]
-    deg_b=[]
-    feat_b=[]
+    from_b = []
+    to_b = []
+    deg_b = []
+    feat_b = []
 
-    # Populate separated DataFrames
+    u_to_list = []
+    u_0_list = []
+    u_1_list = []
+
+    # Populate separated DataFrames, reduce tables to distinct OTU nodes
     for row in df_union.iterrows():
         if row[1][1] in to_list:
-            from_b.append(row[1]['from'])
-            to_b.append(row[1]['to'])
-            deg_b.append(row[1][feature])
-            feat_b.append(row[1]['degree'])
+            if row[1][1] not in u_to_list:
+                u_to_list.append(row[1][1])
+                from_b.append(row[1]['from'])
+                to_b.append(row[1]['to'])
+                deg_b.append(row[1][feature])
+                feat_b.append(row[1]['degree'])
         elif row[1][1] in cat_0_list:
-            from_0.append(row[1]['from'])
-            to_0.append(row[1]['to'])
-            deg_0.append(row[1][feature])
-            feat_0.append(row[1]['degree'])
+            if row[1][1] not in u_0_list:
+                u_0_list.append(row[1][1])
+                from_0.append(row[1]['from'])
+                to_0.append(row[1]['to'])
+                deg_0.append(row[1][feature])
+                feat_0.append(row[1]['degree'])
         elif row[1][1] in cat_1_list:
-            from_1.append(row[1]['from'])
-            to_1.append(row[1]['to'])
-            deg_1.append(row[1][feature])
-            feat_1.append(row[1]['degree'])
+            if row[1][1] not in u_1_list:
+                u_1_list.append(row[1][1])
+                from_1.append(row[1]['from'])
+                to_1.append(row[1]['to'])
+                deg_1.append(row[1][feature])
+                feat_1.append(row[1]['degree'])
 
     # Create the first category's DataFrame
-    cat_0_final = {"from":from_0,"to":to_0,feature:feat_0,"degree":deg_0}
+    cat_0_final = {"from": from_0, "to": to_0, feature: feat_0, "degree": deg_0}
     otu_0_table = pd.DataFrame(data=cat_0_final)
-    otu_0_table.rename(columns = {feature:'degree', 'degree':feature},inplace=True)
+    otu_0_table.rename(columns={feature: 'degree', 'degree': feature}, inplace=True)
 
     # Create the second category's DataFrame
-    cat_1_final = {"from":from_1, "to":to_1, feature:feat_1,"degree":deg_1}
+    cat_1_final = {"from": from_1, "to": to_1, feature: feat_1, "degree": deg_1}
     otu_1_table = pd.DataFrame(data=cat_1_final)
     otu_1_table.rename(columns={feature: 'degree', 'degree': feature}, inplace=True)
 
     # Create the DataFrame for otus which appear in both categories
-    cat_both_final = {"from":from_b, "to":to_b, feature:feat_b,"degree":deg_b}
+    cat_both_final = {"from": from_b, "to": to_b, feature: feat_b, "degree": deg_b}
     otu_both_table = pd.DataFrame(data=cat_both_final)
     otu_both_table.rename(columns={feature: 'degree', 'degree': feature}, inplace=True)
 
     if verbose:
-        print(categories[0]+" Only:")
+        print(categories[0] + " Only:")
         print(otu_0_table.head(n=10))
         print("\t\t ...")
         print(categories[1] + " Only:")
         print(otu_1_table.head(n=10))
         print("\t\t\t ...")
-        print("Both "+categories[0] + " and " +categories[1]+":")
+        print("Both " + categories[0] + " and " + categories[1] + ":")
         print(otu_both_table.head(n=10))
         print("\t\t\t\t ...")
     return otu_0_table, otu_1_table, otu_both_table
@@ -361,7 +385,6 @@ def individual_stats(table, n_iterations, verbose, v_string):
           + "\t Std: " + str(round(df.std_dev.mean(), 3)))
     return stats
 
-
 def main():
     """Main function"""
     parser = make_commandline_interface()
@@ -385,9 +408,11 @@ def main():
         print("\t n_iterations: ", n_iterations)
 
     cat_0_table, cat_1_table = parse_node_table(node_file, feature, categories, verbose)
-    otu_0_table, otu_1_table, otu_both_table = parse_otu_node_table(node_file, edge_file, feature, categories, verbose)
+    df_union = parse_otu_node_table(node_file, edge_file, feature, verbose)
+    otu_0_table, otu_1_table, otu_both_table = split_categories(df_union, categories, feature, verbose)
 
-    parse_stats(feature, categories, cat_0_table, cat_1_table, otu_0_table, otu_1_table, otu_both_table, n_iterations, output_file, verbose)
+    parse_stats(feature, categories, cat_0_table, cat_1_table, otu_0_table,
+                otu_1_table, otu_both_table, n_iterations, output_file, verbose)
 
 
 if __name__ == "__main__":

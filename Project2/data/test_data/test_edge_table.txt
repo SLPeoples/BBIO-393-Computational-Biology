@@ -1,0 +1,11 @@
+from	to	eweight	a_1	a_2	a_3	a_4	a_5	a_6	a_7	a_8	a_9	a_10	a_11	feature	a_12	a_13	a_14
+a	1	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_zero	goods	services	pickles
+b	2	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_zero	goods	services	pickles
+c	3	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_zero	goods	services	pickles
+d	4	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_zero	goods	services	pickles
+e	5	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_zero	goods	services	pickles
+f	6	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles
+g	7	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_one	goods	services	pickles
+h	8	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles
+i	1	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_one	goods	services	pickles
+j	2	1	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles

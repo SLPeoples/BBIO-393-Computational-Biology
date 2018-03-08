@@ -1,0 +1,5 @@
+from	to	feature	degree
+a	1	cat_zero	2
+b	2	cat_zero	2
+f	1	cat_one	2
+g	2	cat_one	2
