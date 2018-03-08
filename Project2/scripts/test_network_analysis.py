@@ -108,6 +108,7 @@ class NetworkAnalysisTests(TestCase):
         otu_0_table, otu_1_table, otu_both_table = split_categories(df_union, self.categories, self.feature, self.verbose)
         assert len(otu_0_table) == 3
         assert len(otu_1_table) == 3
+        # Reduced from 4 to 2 properly
         assert len(otu_both_table) == 2
     
     def test_individual_stats_correct(self):

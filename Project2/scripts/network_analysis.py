@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from __future__ import division
 import pandas as pd
+import os
 
 __author__ = "Samuel L. Peoples"
 __credits__ = ["Dr. Jesse Zaneveld"]
@@ -391,8 +392,18 @@ def main():
     args = parser.parse_args()
 
     node_file = args.node_file
+    if os.path.isfile(node_file) == False:
+        print(node_file+" not found. Please verify location.")
+        exit(0)
     edge_file = args.edge_file
+    if os.path.isfile(edge_file) == False:
+        print(edge_file+" not found. Please verify location.")
+        exit(0)
     output_file = args.output_file
+    if os.path.isdir(output_file) == False:
+        print(node_file+" not found. Please verify location.")
+        exit(0)
+
     feature = args.feature
     categories = args.categories
     n_iterations = args.n_iterations
@@ -417,4 +428,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
