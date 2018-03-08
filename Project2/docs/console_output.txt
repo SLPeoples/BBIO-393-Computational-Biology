@@ -1,104 +1,13 @@
-...>python network_analysis.py -h
-usage: network_analysis.py [-h] -node NODE_FILE -edge EDGE_FILE -f FEATURE -c
-                           CATEGORIES CATEGORIES [-o OUTPUT_FILE]
-                           [-n N_ITERATIONS] [-v] [--version]
-
-        network_analysis.py; analyze statistics of degree comparing between two categories of feature column.
-        Example:         network_analysis.py
-
-            -node {PATH to NODE FILE}
-
-            -edge {PATH to EDGE FILE}
-
-            [-o {PATH to OUTPUT DIRECTORY}]
-
-            -f {FEATURE COLUMN for comparison}
-
-            -c {CATEEGORY of FEATURE} {CATEGORY of FEATURE}
-
-            [-n {N_ITERATIONS for Monte Carlo Simulation}]
-
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -node NODE_FILE, --node_file NODE_FILE
-                        path to an input node file, output from
-                        make_otu_network.py
-  -edge EDGE_FILE, --edge_file EDGE_FILE
-                        path to an input edge file, output from
-                        make_otu_network.py
-  -f FEATURE, --feature FEATURE
-                        Name of the feature column for analysis
-  -c CATEGORIES CATEGORIES, --categories CATEGORIES CATEGORIES
-                        Name of categories within the feature column for
-                        analysis, two (2) required.
-  -o OUTPUT_FILE, --output_file OUTPUT_FILE
-                        PATH to output data. Default:
-                        .~\[feature]_network_analysis.txt
-  -n N_ITERATIONS, --n_iterations N_ITERATIONS
-                        Number of iterations for the analysis, will take
-                        samples for n iterations. Default:1000
-  -v, --verbose         display verbose output while program runs.
-                        Default:True
-  --version             display version number and exit
-
-        This script will analyze statistics between two categories of a feature column in a node table.
-        Returns output text file with statistics for the degree of each category, and otus associated with the
-        respective categories, as well as both. Accuracy of the statistics can be controlled with n_iterations.
-
-        Rationale
-        ---------
-
-        Comparing the degree of the different categories of a feature column can display a disparity of otu frequency
-        in one category, or the other. This translates to a statistically significant difference between the microbial
-        communities with respect to the categories analyzed.
-
-        References
-        ----------
-        Qiime: http://qiime.org/
-        Qiita: https://qiita.ucsd.edu/
-        Gut Microbiome Dataset: https://qiita.ucsd.edu/study/description/77
-        Biom-Format: http://biom-format.org/documentation/biom_format.html
-        Cytoscape: http://www.cytoscape.org/documentation_users.html
-        Make_otu_network.py: http://qiime.org/scripts/make_otu_network.html
-
-        Notes
-        ----------
-        Given a BIOM and Mapping File, the following example can be used to generate the necessary node and edge files.
-        Requires QIIME.
-
-        Rarify the table for increased accuracy
-            single_rarefaction.py -i 'sample.biom' -o 'sample_1000.biom' -d 1000
-
-        Filter any samples that you are not analyzing. Here, we do not want 'Overweight' samples.
-            filter_samples_from_otu_table.py
-                -i 'sample_1000.biom' -m 'mapping_file.txt' -o 'sample1000_filtered.biom'
-                --output_mapping_fp 'mapping_file_filtered.txt' -s 'obesitycat:*,!Overweight'
-
-        Make the otu network with the filtered biom and mapping file, here we wanted properties based on "obesitycat"
-            make_otu_network.py
-                -i 'sample_1000_filtered.biom' -m mapping_file_filtered.txt -o otu_network_filtered  -b "obesitycat"
-
-
-...>python network_analysis.py -node "~./data/filtered_data/otu_network_filtered/real_node_table.txt" -edge "~./data/filtered_data/otu_network_filtered/real_edge_table.txt" -o "~./data/results" -f "obesitycat" -c "Lean" "Obese"
+C:\Users\Ripti\Dropbox\Peoples\CSS143\BBIO-393-Computational-Biology\Project2\scripts>python network_analysis.py -node "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt" -edge "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt" -o "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results" -f "obesitycat" -c "Lean" "Obese"
 network_analysis.py
-         Node file: ~./data/filtered_data/otu_network_filtered/real_node_table.txt
-         Edge file: ~./data/filtered_data/otu_network_filtered/real_edge_table.txt
-         Output filepath: ~./data/results
+         Node file: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt
+         Edge file: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt
+         Output filepath: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results
          Feature:  obesitycat
          Categories:  ['Lean', 'Obese']
          n_iterations:  1000
-Parsing ~./data/filtered_data/otu_network_filtered/real_node_table.txt
-         Feature: obesitycat
-         Categories: Lean, Obese
-Parsing ~./data/filtered_data/otu_network_filtered/real_edge_table.txt
-         Feature: obesitycat
-         Categories: Lean, Obese
-
-network_analysis.py:158: FutureWarning: convert_objects is deprecated.  Use the data-type specific converters pd.to_datetime, pd.to_timedelta and pd.to_numeric.
-  df_edge['to'] = df_edge['to'].convert_objects(convert_numeric=True) # Doesn't work with to_numeric
-network_analysis.py:161: FutureWarning: convert_objects is deprecated.  Use the data-type specific converters pd.to_datetime, pd.to_timedelta and pd.to_numeric.
-  df_node['to'] = df_node['to'].convert_objects(convert_numeric=True) # Doesn't work with to_numeric
+Parsing C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_node_table.txt
+Parsing C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/filtered_data/otu_network_filtered/real_edge_table.txt
 
 Unioned DataFrame:
          from     to obesitycat  degree
@@ -107,6 +16,11 @@ Unioned DataFrame:
 2     77.TS19  13986      Obese       3
 3    77.TS127  13986       Lean       3
 4     77.TS66  13986      Obese       3
+5    77.TS2.2  15728       Lean      43
+6  77.TS134.2  15728      Obese      43
+7   77.TS27.2  15728      Obese      43
+8   77.TS39.2  15728      Obese      43
+9    77.TS124  15728       Lean      43
          ...
 Lean Only:
   obesitycat        from  degree      to
@@ -118,34 +32,34 @@ Lean Only:
 5       Lean    77.TS129       1  109587
 6       Lean  77.TS109.2       1  110059
 7       Lean     77.TS25       2  113278
-8       Lean    77.TS1.2       2  113278
-9       Lean      77.TS2       1  113827
+8       Lean      77.TS2       1  113827
+9       Lean   77.TS30.2       1  113919
                  ...
 Obese Only:
   obesitycat        from  degree     to
 0      Obese    77.TS134       2  12727
-1      Obese  77.TS126.2       2  12727
-2      Obese  77.TS119.2       2  24546
-3      Obese   77.TS39.2       2  24546
-4      Obese  77.TS118.2       3  25534
-5      Obese    77.TS9.2       3  25534
-6      Obese     77.TS37       3  25534
-7      Obese    77.TS190       1  28218
-8      Obese    77.TS156       1  29566
-9      Obese  77.TS169.2       1  33112
+1      Obese  77.TS119.2       2  24546
+2      Obese  77.TS118.2       3  25534
+3      Obese    77.TS190       1  28218
+4      Obese    77.TS156       1  29566
+5      Obese  77.TS169.2       1  33112
+6      Obese     77.TS21       1  34139
+7      Obese     77.TS87       1  35260
+8      Obese     77.TS43      10  36330
+9      Obese    77.TS169       3  36378
                          ...
 Both Lean and Obese:
   obesitycat        from  degree     to
 0      Obese     77.TS19       3  13986
-1       Lean    77.TS127       3  13986
-2      Obese     77.TS66       3  13986
-3       Lean    77.TS2.2      43  15728
-4      Obese  77.TS134.2      43  15728
-5      Obese   77.TS27.2      43  15728
-6      Obese   77.TS39.2      43  15728
-7       Lean    77.TS124      43  15728
-8      Obese     77.TS37      43  15728
-9       Lean    77.TS165      43  15728
+1       Lean    77.TS2.2      43  15728
+2      Obese  77.TS116.2      39  16054
+3       Lean    77.TS195       2  16340
+4      Obese   77.TS94.2       4  17311
+5      Obese   77.TS70.2      12  19611
+6      Obese     77.TS74       5  31249
+7      Obese    77.TS133      19  48084
+8       Lean   77.TS13.2       4  49088
+9      Obese   77.TS67.2      14  52624
                                  ...
 Processing statistics for Lean nodes, for 1000 iterations, with samples of 40.
 Processing statistics for Obese nodes, for 1000 iterations, with samples of 40.
@@ -154,13 +68,13 @@ Processing statistics for otu nodes connected to Obese only, for 1000 iterations
 Processing statistics for otu nodes connected to both Lean and Obese, for 1000 iterations, with samples of 40.
 Statistics:
 Lean:
-         Min: 206.316    1Q: 248.666     Mean: 272.001   Median: 272.238         3Q: 295.564     Max: 344.462    Std: 35.342
+         Min: 206.103    1Q: 248.114     Mean: 271.906   Median: 271.788         3Q: 296.252     Max: 344.526    Std: 35.574
 Obese:
-         Min: 164.337    1Q: 246.873     Mean: 276.028   Median: 280.724         3Q: 308.285     Max: 363.016    Std: 46.651
+         Min: 163.965    1Q: 246.257     Mean: 275.77    Median: 280.659         3Q: 308.187     Max: 363.067    Std: 46.73
 LeanOnly :
-         Min: 1.0        1Q: 1.007       Mean: 1.895     Median: 1.78    3Q: 2.102       Max: 6.047  Std: 1.157
+         Min: 1.0        1Q: 1.0         Mean: 1.435     Median: 1.01    3Q: 1.809       Max: 4.185  Std: 0.759
 ObeseOnly :
-         Min: 1.0        1Q: 2.07        Mean: 7.196     Median: 4.111   3Q: 8.374       Max: 42.639     Std: 9.044
+         Min: 1.0        1Q: 1.003       Mean: 2.732     Median: 1.644   3Q: 3.016       Max: 16.614     Std: 3.154
 Both Lean and Obese:
-         Min: 4.584      1Q: 23.512      Mean: 56.117    Median: 46.313  3Q: 78.342      Max: 177.502    Std: 42.55
-Output saved to: ~./data/results/obesitycat_network_analysis.txt
+         Min: 2.067      1Q: 6.385       Mean: 24.117    Median: 14.049  3Q: 31.4        Max: 119.475    Std: 26.959
+Output saved to: C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/results/obesitycat_network_analysis.txt
