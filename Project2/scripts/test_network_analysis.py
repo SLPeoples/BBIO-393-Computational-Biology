@@ -18,10 +18,10 @@ class NetworkAnalysisTests(TestCase):
         """
         Sets up filepaths and variables that the program will need for various tests.
         """
-        data = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/data/"
-        self.node_file = data+"test_data/test_node_table.txt"
-        self.edge_file = data+"test_data/test_edge_table.txt"
-        self.output_file = data+"test_data/results"
+        data = "C:/Users/Ripti/Dropbox/Peoples/CSS143/BBIO-393-Computational-Biology/Project2/"
+        self.node_file = data+"data/test_data/test_node_table.txt"
+        self.edge_file = data+"data/test_data/test_edge_table.txt"
+        self.output_file = data+"data/test_data/results"
         self.feature = "feature"
         self.categories = ["cat_zero", "cat_one"]
         self.n_iterations = 1000
@@ -34,9 +34,9 @@ class NetworkAnalysisTests(TestCase):
                                       "degree":[2,2,2,2,1,1,1,1,1,1,]})
         self.cat_0_table = self.df_union[self.df_union["feature"]=="cat_zero"]
         self.cat_1_table = self.df_union[self.df_union["feature"]=="cat_one"]
-        self.otu_0_table = pd.DataFrame.from_csv(data+"test_data/test_cat_0_list.txt", sep='\t')
-        self.otu_1_table = pd.DataFrame.from_csv(data+"test_data/test_cat_1_list.txt", sep='\t')
-        self.otu_both_table = pd.DataFrame.from_csv(data+"test_data/test_cat_b_list.txt", sep='\t')
+        self.otu_0_table = pd.DataFrame.from_csv(data+"data/test_data/test_cat_0_list.txt", sep='\t')
+        self.otu_1_table = pd.DataFrame.from_csv(data+"data/test_data/test_cat_1_list.txt", sep='\t')
+        self.otu_both_table = pd.DataFrame.from_csv(data+"data/test_data/test_cat_b_list.txt", sep='\t')
 
 
     def test_parse_node_table_correct(self):

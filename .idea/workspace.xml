@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d165406-baac-40b6-a2d0-891aae741fb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Project2/data/results/ancestry_network_analysis.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Project2/data/results/obesitycat_network_analysis.txt" afterPath="$PROJECT_DIR$/Project2/data/results/obesitycat_network_analysis.txt" />
-      <change beforePath="$PROJECT_DIR$/Project2/data/results/twin_mother_network_analysis.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Project2/data/test_data/results/feature_network_analysis.txt" afterPath="$PROJECT_DIR$/Project2/data/test_data/results/feature_network_analysis.txt" />
-      <change beforePath="$PROJECT_DIR$/Project2/data/test_data/test_df_union.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Project2/docs/console_output.txt" afterPath="$PROJECT_DIR$/Project2/docs/console_output.txt" />
       <change beforePath="$PROJECT_DIR$/Project2/scripts/test_network_analysis.py" afterPath="$PROJECT_DIR$/Project2/scripts/test_network_analysis.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +27,8 @@
       <file leaf-file-name="test_network_analysis.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Project2/scripts/test_network_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="54" column="79" lean-forward="true" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
+            <state relative-caret-position="340">
+              <caret line="20" column="94" lean-forward="false" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -314,9 +308,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 21h 47m 30s.xml">
-      <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 21h 48m 23s.xml">
       <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
     </history-entry>
@@ -344,6 +335,9 @@
     <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 22h 29m 46s.xml">
       <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 22h 30m 15s.xml">
+      <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1273" y="0" width="1294" height="1057" extended-state="0" />
@@ -354,7 +348,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" show_stripe_button="true" weight="0.41101694" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.41101694" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -536,8 +530,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project2/scripts/test_network_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="54" column="79" lean-forward="true" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
+        <state relative-caret-position="340">
+          <caret line="20" column="94" lean-forward="false" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
