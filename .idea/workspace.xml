@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d165406-baac-40b6-a2d0-891aae741fb8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Project2/data/results/obesitycat_network_analysis.txt" afterPath="$PROJECT_DIR$/Project2/data/results/obesitycat_network_analysis.txt" />
-      <change beforePath="$PROJECT_DIR$/Project2/network_analysis.py" afterPath="$PROJECT_DIR$/Project2/network_analysis.py" />
+      <change beforePath="$PROJECT_DIR$/Project2/data/reduced_data/degree_table.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project2/data/reduced_data/edge_node/edge_table.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project2/data/reduced_data/edge_node/node_table.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project2/data/reduced_data/otu_node_table.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project2/data/reduced_data/user_node_table.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project2/data/test_data/results/feature_network_analysis.txt" afterPath="$PROJECT_DIR$/Project2/data/test_data/results/feature_network_analysis.txt" />
+      <change beforePath="$PROJECT_DIR$/Project2/network_analysis.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Project2/test_network_analysis.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,31 +45,28 @@
       <file leaf-file-name="test_random_network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Meeting12/test_random_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="201">
+              <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="network_analysis.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project2/network_analysis.py">
+      <file leaf-file-name="network_analysis.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Project2/scripts/network_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-              <folding>
-                <element signature="e#22#53#0" expanded="true" />
-                <element signature="e#445#4837#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_network_analysis.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Project2/test_network_analysis.py">
+      <file leaf-file-name="test_network_analysis.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Project2/scripts/test_network_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -167,6 +170,12 @@
               <item name="BBIO-393-Computational-Biology" type="b2602c69:ProjectViewProjectNode" />
               <item name="BBIO-393-Computational-Biology" type="462c0819:PsiDirectoryNode" />
               <item name="Project2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BBIO-393-Computational-Biology" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BBIO-393-Computational-Biology" type="462c0819:PsiDirectoryNode" />
+              <item name="Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -336,9 +345,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 21h 35m 03s.xml">
-      <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 21h 41m 52s.xml">
       <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
     </history-entry>
@@ -364,6 +370,9 @@
       <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
     </history-entry>
     <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 22h 05m 43s.xml">
+      <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_test_network_analysis_NetworkAnalysisTests - 2018.03.07 at 22h 07m 15s.xml">
       <configuration name="py.test for test_network_analysis.NetworkAnalysisTests" configurationId="tests" />
     </history-entry>
   </component>
@@ -400,8 +409,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Week2/hello_world.py" />
-    <entry file="file://$PROJECT_DIR$/Week2/tables_exercises.py" />
     <entry file="file://$PROJECT_DIR$/ProblemSet1/problemset_1_peoples.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
@@ -526,22 +533,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Meeting12/test_random_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Project2/network_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
           <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#22#53#0" expanded="true" />
-            <element signature="e#445#4837#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -549,9 +545,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Meeting12/test_random_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project2/scripts/test_network_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project2/scripts/network_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
