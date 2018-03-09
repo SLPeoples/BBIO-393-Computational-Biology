@@ -5,7 +5,7 @@ node_name	node_disp_name	ntype	degree	weighted_degree	a_1	a_2	a_3	a_4	a_5	a_6	a_
 4	otu_node	1	1	kpcofg	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu
 5	otu_node	4	1	kpcofg	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu
 6	otu_node	1	1	kpcofg	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu
-7	otu_node	3	1	kpcofg	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu
+7	otu_node	3	2	kpcofg	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu
 8	otu_node	3	1	kpcofg	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu	otu
 a	a	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_zero	goods	services	pickles
 b	b	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_zero	goods	services	pickles
@@ -14,6 +14,6 @@ d	d	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number
 e	e	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_zero	goods	services	pickles
 f	f	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles
 g	g	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_one	goods	services	pickles
-h	h	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles
+h	h	user_node	2	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles
 i	i	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	zero	name	stuff	value	something	cat_one	goods	services	pickles
 j	j	user_node	1	1000	gibberish	nonsense	arbitrary	meaningless	unnecessary	number	one	name	stuff	value	something	cat_one	goods	services	pickles

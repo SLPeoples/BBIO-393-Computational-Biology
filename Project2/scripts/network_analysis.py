@@ -71,19 +71,19 @@ def make_commandline_interface():
 
     # Required parameters
     parser.add_argument('-node', '--node_file', type=str, required=True, \
-                        help='path to an input node file, output from make_otu_network.py')
+                        help='PATH to an input NODE FILE, output from make_otu_network.py')
 
     parser.add_argument('-edge', '--edge_file', type=str, required=True, \
-                        help='path to an input edge file, output from make_otu_network.py')
+                        help='PATH to an input EDGE FILE, output from make_otu_network.py')
 
     parser.add_argument('-f', '--feature', type=str, required=True, \
-                        help='Name of the feature column for analysis')
+                        help='Name of the FEATURE column for analysis')
 
     parser.add_argument('-c', '--categories', type=str, nargs=2, required=True, \
-                        help='Name of categories within the feature column for analysis, two (2) required.')
+                        help='Name of CATEGORIES within the feature column for analysis, two (2) required.')
     # Optional parameters
     parser.add_argument('-o', '--output_file', type=str, default='',
-                        help='PATH to output data. Default: .~\[feature]_network_analysis.txt')
+                        help='PATH to output DIRECTORY. Default: .~\[feature]_network_analysis.txt')
 
     parser.add_argument('-n', '--n_iterations', type=int, default=1000, \
                         help="Number of iterations for the analysis, will take samples for n iterations. Default:%(default)s")
@@ -101,7 +101,8 @@ def make_commandline_interface():
 
 def parse_node_table(node_file, feature, categories, verbose):
     """
-    Parses the node table's user_nodes degree and feature, returns separated DataFrames based on feature categories.
+    Parses the node table's user_nodes degree and feature,
+    returns separated DataFrames based on feature categories.
     :param node_file: filepath to node file
     :param feature: feature column for analysis
     :param categories: categories of feature column
@@ -110,14 +111,13 @@ def parse_node_table(node_file, feature, categories, verbose):
     """
     if verbose:
         print("Parsing "+str(node_file))
-    # Column headers
-    column_list = ["node_disp_name", "degree", feature]
+
     # Read the node file
     df = pd.read_csv(node_file, sep="\t")
     # Save just user nodes
     df = df[df.ntype == "user_node"]
     # Reduce the node file DataFrame
-    df = df[column_list]
+    df = df[["node_disp_name", "degree", feature]]
     # Separate the DataFrame into the two defined categories
     cat_0_table = df[df[feature] == categories[0]]
     cat_1_table = df[df[feature] == categories[1]]
@@ -210,9 +210,9 @@ def split_categories(df_union, categories, feature, verbose):
     to_0 = []
     deg_0 = []
     feat_0 = []
-    from_1 = []
 
     # Lists for the second category's DataFrame
+    from_1 = []
     to_1 = []
     deg_1 = []
     feat_1 = []
@@ -227,7 +227,8 @@ def split_categories(df_union, categories, feature, verbose):
     u_0_list = []
     u_1_list = []
 
-    # Populate separated DataFrames, reduce tables to distinct OTU nodes
+    # Populate separated DataFrames, reduce tables to distinct OTU nodes;
+    # Couldn't break into a separate function
     for row in df_union.iterrows():
         if row[1][1] in to_list:
             if row[1][1] not in u_to_list:
@@ -386,21 +387,22 @@ def individual_stats(table, n_iterations, verbose, v_string):
           + "\t Std: " + str(round(df.std_dev.mean(), 3)))
     return stats
 
+
 def main():
     """Main function"""
     parser = make_commandline_interface()
     args = parser.parse_args()
 
     node_file = args.node_file
-    if os.path.isfile(node_file) == False:
+    if not os.path.isfile(node_file):
         print(node_file+" not found. Please verify location.")
         exit(0)
     edge_file = args.edge_file
-    if os.path.isfile(edge_file) == False:
+    if not os.path.isfile(edge_file):
         print(edge_file+" not found. Please verify location.")
         exit(0)
     output_file = args.output_file
-    if os.path.isdir(output_file) == False:
+    if not os.path.isdir(output_file):
         print(node_file+" not found. Please verify location.")
         exit(0)
 

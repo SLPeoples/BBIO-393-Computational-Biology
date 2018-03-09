@@ -1,10 +1,10 @@
 cat_zero:
-	 Min: 1.0	 1Q: 1.0	 Mean: 1.399	 Median: 1.103	 3Q: 1.971	 Max: 2.0	 Std: 0.49
+	 Min: 1.0	 1Q: 1.0	 Mean: 1.4	 Median: 1.103	 3Q: 1.971	 Max: 2.0	 Std: 0.49
 cat_one:
-	 Min: 1.0	 1Q: 1.0	 Mean: 1.401	 Median: 1.105	 3Q: 1.972	 Max: 2.0	 Std: 0.49
+	 Min: 1.0	 1Q: 1.156	 Mean: 1.668	 Median: 1.982	 3Q: 2.0	 Max: 2.0	 Std: 0.47
 cat_zeroOnly :
 	 Min: 1.0	 1Q: 1.0	 Mean: 1.0	 Median: 1.0	 3Q: 1.0	 Max: 1.0	 Std: 0.0
 cat_oneOnly :
-	 Min: 1.0	 1Q: 1.0	 Mean: 1.0	 Median: 1.0	 3Q: 1.0	 Max: 1.0	 Std: 0.0
+	 Min: 1.0	 1Q: 1.0	 Mean: 1.33	 Median: 1.017	 3Q: 1.843	 Max: 2.0	 Std: 0.469
 Both cat_zero and cat_one:
 	 Min: 2.0	 1Q: 2.0	 Mean: 2.0	 Median: 2.0	 3Q: 2.0	 Max: 2.0	 Std: 0.0

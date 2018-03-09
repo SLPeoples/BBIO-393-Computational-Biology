@@ -27,11 +27,11 @@ class NetworkAnalysisTests(TestCase):
         self.n_iterations = 1000
         self.verbose = False
 
-        self.df_union = pd.DataFrame({"from":["a","i","b","j","c","d","e","f","g","h"],
-                                      "to":[1,1,2,2,3,4,5,6,7,8],
+        self.df_union = pd.DataFrame({"from":["a","i","b","j","c","d","e","f","g","h","h"],
+                                      "to":[1,1,2,2,3,4,5,6,7,7,8],
                                       "feature":["cat_zero","cat_one","cat_zero","cat_one","cat_zero","cat_zero",
-                                                 "cat_zero","cat_one","cat_one","cat_one"],
-                                      "degree":[2,2,2,2,1,1,1,1,1,1,]})
+                                                 "cat_zero","cat_one","cat_one","cat_one","cat_one"],
+                                      "degree":[2,2,2,2,1,1,1,1,2,2,1,]})
         self.cat_0_table = self.df_union[self.df_union["feature"]=="cat_zero"]
         self.cat_1_table = self.df_union[self.df_union["feature"]=="cat_one"]
         self.otu_0_table = pd.DataFrame.from_csv(data+"data/test_data/test_cat_0_list.txt", sep='\t')
