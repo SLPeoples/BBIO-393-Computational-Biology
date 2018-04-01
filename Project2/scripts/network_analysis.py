@@ -114,8 +114,10 @@ def parse_node_table(node_file, feature, categories, verbose):
 
     # Read the node file
     df = pd.read_csv(node_file, sep="\t")
+
     # Save just user nodes
     df = df[df.ntype == "user_node"]
+    print(df)
     # Reduce the node file DataFrame
     df = df[["node_disp_name", "degree", feature]]
     # Separate the DataFrame into the two defined categories

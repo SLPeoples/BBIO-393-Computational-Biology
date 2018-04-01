@@ -1,10 +1,10 @@
 Lean:
-	 Min: 206.239	 1Q: 248.254	 Mean: 271.92	 Median: 272.038	 3Q: 295.802	 Max: 344.708	 Std: 35.453
+	 Min: 206.458	 1Q: 248.951	 Mean: 272.609	 Median: 272.594	 3Q: 296.784	 Max: 344.495	 Std: 35.393
 Obese:
-	 Min: 163.542	 1Q: 246.967	 Mean: 276.095	 Median: 281.01	 3Q: 308.403	 Max: 363.403	 Std: 46.746
+	 Min: 162.207	 1Q: 246.615	 Mean: 275.708	 Median: 280.755	 3Q: 308.183	 Max: 362.895	 Std: 47.037
 LeanOnly :
-	 Min: 1.0	 1Q: 1.0	 Mean: 1.446	 Median: 1.012	 3Q: 1.811	 Max: 4.341	 Std: 0.784
+	 Min: 1.0	 1Q: 1.0	 Mean: 1.438	 Median: 1.008	 3Q: 1.816	 Max: 4.206	 Std: 0.763
 ObeseOnly :
-	 Min: 1.0	 1Q: 1.002	 Mean: 2.732	 Median: 1.655	 3Q: 3.023	 Max: 16.195	 Std: 3.106
+	 Min: 1.0	 1Q: 1.003	 Mean: 2.742	 Median: 1.636	 3Q: 3.036	 Max: 16.524	 Std: 3.157
 Both Lean and Obese:
-	 Min: 2.081	 1Q: 6.344	 Mean: 24.058	 Median: 14.12	 3Q: 31.105	 Max: 120.963	 Std: 26.988
+	 Min: 2.074	 1Q: 6.291	 Mean: 23.866	 Median: 13.97	 3Q: 30.537	 Max: 120.198	 Std: 26.955
